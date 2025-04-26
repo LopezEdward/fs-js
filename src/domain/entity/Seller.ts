@@ -17,6 +17,6 @@ export class Seller {
 
 
     @ManyToOne(() => District, (district) => district.sellers)
-    @JoinColumn({name: "dis_id", referencedColumnName: "dis_id"})
+    @JoinColumn({name: "dis_id"})
     district!: Relation<District>
 }
