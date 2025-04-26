@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.2.1",
     "astro": "^5.7.5",
     "pg": "^8.15.6",
     "reflect-metadata": "^0.2.2",
