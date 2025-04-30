@@ -1,0 +1,1 @@
+export type TitleType = "upper" | "only-logo" | "only-title";
