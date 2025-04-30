@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+    /* Link color palette */
+    --link-color-light: #1874c0;
+    --link-hover-color-light: #1626b3;
+
+    /* Font color palette */
+
+
+    /* Background color palette */
+    --bg-l-color: ;
+    --bg-d-color: ;
+}
+
+@layer utilities {
+    .link-lm-color {
+        color: var(--link-color-light)
+    }
+
+    .link-lm-color:hover {
+        color: var(--link-hover-color-light)
+    }
+}
