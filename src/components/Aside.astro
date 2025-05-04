@@ -1,0 +1,15 @@
+---
+interface Props {
+    title?: string
+}
+
+const {title} = Astro.props;
+---
+<aside class="w-2/12 max-w-3/12 h-full mr-2">
+    <div class="bg-amber-400 rounded-tr-xl">
+        <h1 class="text-center text-2xl font-bold">{(title) ? title : "No title"}</h1>
+    </div>
+    <div class="min-h-60 bg-amber-200 rounded-br-xl">
+        <slot />
+    </div>
+</aside>

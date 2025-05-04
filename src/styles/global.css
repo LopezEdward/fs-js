@@ -15,10 +15,10 @@
 
 @layer utilities {
     .link-lm-color {
-        color: var(--link-color-light)
+        color: var(--link-color-light);
     }
 
     .link-lm-color:hover {
-        color: var(--link-hover-color-light)
+        color: var(--link-hover-color-light);
     }
 }

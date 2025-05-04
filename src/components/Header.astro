@@ -1,19 +1,20 @@
 ---
 import { Image } from "astro:assets";
+import LogoMiss from "./../assets/picture/img_miss.png";
 ---
 <header class="flex">
     <div class="flex-col justify-items-center items-center w-4/12 ml-6 mr-6">
-        <Image src="https://cdn.iconscout.com/icon/premium/png-256-thumb/image-missing-1178918.png" alt="Cosas" width={100} height={100} />
+        <Image src={LogoMiss} alt="Cosas" width={100} height={100} loading="eager" />
         <h1>Test</h1>
     </div>
     <div class="">
         <nav class="w-full h-full">
             <ul class="w-full h-full flex justify-evenly">
-                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="">Home</a></li>
-                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="">Sell</a></li>
-                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="">Inventory</a></li>
-                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="">About</a></li>
-                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="">Account</a></li>
+                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="/">Home</a></li>
+                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="/sell">Sell</a></li>
+                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="/inventory">Inventory</a></li>
+                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="/about">About</a></li>
+                <li class="flex w-fit justify-center items-center ml-1 mr-1 p-4"><a class="link-lm-color" href="/account">Account</a></li>
             </ul>
         </nav>
     </div>
