@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Aside from '../components/Aside.astro';
 import DropListContainer from '../components/DropListContainer.astro';
 import DropListItem from '../components/DropListItem.astro';
+import MainContent from '../components/MainContent.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -13,11 +14,12 @@ import DropListItem from '../components/DropListItem.astro';
 	<div class="flex items-center justify-center bg-amber-500">
 		<Header />
 	</div>
-	<div>
+	<div class="flex mt-2">
 		<Aside>
 			<DropListContainer label="Label 1">
 				<DropListItem items={[{label: "d", href: "/"}, {label: "d", href: "/"}]}></DropListItem>
 			</DropListContainer>
 		</Aside>
+		<MainContent/>
 	</div>
 </Layout>

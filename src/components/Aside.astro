@@ -5,7 +5,7 @@ interface Props {
 
 const {title} = Astro.props;
 ---
-<aside class="w-2/12 max-w-3/12 h-full mr-2 mt-2">
+<aside class="w-2/12 max-w-3/12 h-full mr-2 min-w-2/12">
     <div class="bg-amber-400 rounded-tr-xl">
         <h1 class="text-center text-2xl font-bold">{(title) ? title : "Sections"}</h1>
     </div>
