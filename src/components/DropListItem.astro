@@ -1,0 +1,14 @@
+---
+interface Props {
+    items: {label: string, href: string}[]
+}
+
+const { items } = Astro.props;
+---
+<ul class="ml-2">
+    {
+        items.map(({label, href}) => {
+            return <li class="px-1 hover:cursor-pointer hover:bg-gray-400/40"><a class="block w-full" href={href}>{label}</a></li>;
+        })
+    }
+</ul>
