@@ -1,10 +1,11 @@
 ---
 interface Props {
     label: string,
-    href?: string
+    href?: string,
+    open?: boolean
 }
 
-const { label, href } = Astro.props;
+const { label, href, open } = Astro.props;
 ---
 <div class="">
     {
@@ -12,7 +13,7 @@ const { label, href } = Astro.props;
     }
     {
         (!href) &&
-            <details class="">
+            <details class="" open={(open)}>
                 <summary class="font-bold marker:content-none bg-amber-300 px-2 hover:cursor-pointer hover:bg-blue-500 hover:text-white">{label}</summary>
                 <slot/>
             </details>

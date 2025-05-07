@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import MainContent from "../../components/MainContent.astro";
+import DropListContainer from "../../components/DropListContainer.astro";
+import DropListItem from "../../components/DropListItem.astro";
+import Aside from "../../components/Aside.astro";
+import { ProductDataTable } from "../../components/preact/DataTable";
+
+const sections = [
+    {label: "Agregar producto", href: "/inventory/add"},
+    {label: "Editar producto", href:"/inventory/edit"}
+];
+---
+<Layout title="App - Inventory">
+    <div class="flex items-center justify-center bg-amber-500">
+		<Header />
+	</div>
+    <div class="flex mt-2">
+		<Aside title="Acciones">
+			<DropListContainer label="Producto">
+				<DropListItem items={sections}></DropListItem>
+			</DropListContainer>
+		</Aside>
+		<MainContent>
+			<ProductDataTable 
+				data={
+					[{id: 0, name: "Cosas", stock: 10}, {id: 1, name: "Cosas", stock: 10, categoryId: 10}]
+				}
+				headers={
+					[
+						{label: "ID", entityProp: "id"},
+						{label: "Categoría ID", entityProp: "categoryId"},
+						{label: "Nombre", entityProp: "name"},
+						{label: "Stock", entityProp: "stock"}
+					]
+				}
+				actions={{edit: (ev) => {console.log(ev)}, remove: (ev) => {console.log(ev)}}} client:load />
+		</MainContent>
+	</div>
+</Layout>

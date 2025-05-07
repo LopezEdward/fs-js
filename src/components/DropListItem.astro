@@ -4,10 +4,15 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 <ul class="ml-2">
     {
         items.map(({label, href}) => {
+            if (href === pathname) {
+                return <li class="px-1 hover:cursor-pointer bg-sky-600 hover:bg-gray-400/40"><a class="block w-full" href={href}>{label}</a></li>;
+            }
+
             return <li class="px-1 hover:cursor-pointer hover:bg-gray-400/40"><a class="block w-full" href={href}>{label}</a></li>;
         })
     }
