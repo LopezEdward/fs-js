@@ -11,6 +11,11 @@ const sections = [
     {label: "Agregar producto", href: "/inventory/add"},
     {label: "Editar producto", href:"/inventory/edit"}
 ];
+
+function dev (ev:MouseEvent) {
+	console.log("pass here");
+	console.log(ev);
+}
 ---
 <Layout title="App - Inventory">
     <div class="flex items-center justify-center bg-amber-500">
@@ -35,7 +40,7 @@ const sections = [
 						{label: "Stock", entityProp: "stock"}
 					]
 				}
-				actions={{edit: (ev) => {console.log(ev)}, remove: (ev) => {console.log(ev)}}} client:load />
+				actions={{edit: dev, remove: dev }} client:load />
 		</MainContent>
 	</div>
 </Layout>

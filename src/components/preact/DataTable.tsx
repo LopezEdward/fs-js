@@ -11,6 +11,8 @@ interface DataTableProps {
 }
 
 export function ProductDataTable (props: DataTableProps) {
+    console.log(props.actions.edit);
+
     return (
         <table>
             <tbody>
@@ -33,14 +35,16 @@ export function ProductDataTable (props: DataTableProps) {
                                         );
                                     })
                                 }
-                                {
-                                    (props.actions.edit) &&
-                                    <td key={"col_" + product.id + "_edit_actions"}><button key={product.id + "_edit"} onClick={props.actions.edit}>Editar</button></td>
-                                }
-                                {
-                                    (props.actions.remove) &&
+                                
+                                    <td key={"col_" + product.id + "_edit_actions"} class="hover:font-bold"><button key={product.id + "_edit"} onClick={(e) => {
+                                        console.log(e); 
+                                        if (props.actions.edit) { 
+                                            console.log("Pass here");
+                                            props.actions.edit(e);
+                                        } 
+                                        }}>Editar</button></td>
                                     <td key={"col_" + product.id + "_remove_actions"}><button key={product.id + "_remove"} onClick={props.actions.remove}>Eliminar</button></td>
-                                }
+                                
                             </tr>
                         );
                     })
