@@ -1,8 +1,13 @@
 export type TitleType = "upper" | "only-logo" | "only-title";
 
-export interface Product {
+export type Product = {
     id: number,
     categoryId?: number,
     name: string,
     stock: number
+}
+
+export type Category = {
+    id: number,
+    name: string
 }

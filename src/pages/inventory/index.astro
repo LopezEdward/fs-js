@@ -6,16 +6,12 @@ import DropListContainer from "../../components/DropListContainer.astro";
 import DropListItem from "../../components/DropListItem.astro";
 import Aside from "../../components/Aside.astro";
 import { ProductDataTable } from "../../components/preact/DataTable";
+import {dev} from "../../lib/actions/crud-actions";
 
 const sections = [
     {label: "Agregar producto", href: "/inventory/add"},
     {label: "Editar producto", href:"/inventory/edit"}
 ];
-
-function dev (ev:MouseEvent) {
-	console.log("pass here");
-	console.log(ev);
-}
 ---
 <Layout title="App - Inventory">
     <div class="flex items-center justify-center bg-amber-500">
@@ -39,8 +35,7 @@ function dev (ev:MouseEvent) {
 						{label: "Nombre", entityProp: "name"},
 						{label: "Stock", entityProp: "stock"}
 					]
-				}
-				actions={{edit: dev, remove: dev }} client:load />
+				} client:load />
 		</MainContent>
 	</div>
 </Layout>
