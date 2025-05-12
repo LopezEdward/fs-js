@@ -1,6 +1,6 @@
 import type { ProductDTO, CategoryDTO, ProductDTOPage, StatusResponse, CategoryDTOPage, BoucherDTO } from "./types";
 
-const apiRoute = "http://localhost:8081/api/v1";
+const apiRoute = import.meta.env.API_URL;
 const apiInventoryRoute = "/inventory";
 export const MIN_ITEMS_PER_REQUEST = 25;
 export const MAX_ITEMS_PER_REQUEST = 100;
