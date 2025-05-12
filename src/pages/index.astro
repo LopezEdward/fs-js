@@ -23,7 +23,14 @@ import Section from '../components/Section.astro';
 		</Aside>
 		<MainContent>
 			<Section title="¡Bienvenidos a la aplicación!">
-				
+				<div class="mt-5 max-w-2/12 bg-amber-300 rounded-t-lg">
+					<span class="block pb-1 font-bold text-lg border-b text-center bg-amber-500 rounded-t-lg border">Enlaces de Interés</span>
+					<ul class="border border-t-0 h-full w-full">
+						<li class="block w-full"><a class="hover:bg-amber-600/50 hover:border-solid border-b border-hidden block py-1 px-2 w-full" href="/inventory/product">Lista de Productos</a></li>
+						<li class="block w-full"><a class="hover:bg-amber-600/50 hover:border-solid  border-y border-hidden block py-1 px-2 w-full" href="/inventory/category">Lista de Categorías</a></li>
+						<li class="block w-full"><a class="hover:bg-amber-600/50 hover:border-solid  border-t border-hidden block py-1 px-2 w-full" href="/sell">Ventas</a></li>
+					</ul>
+				</div>
 			</Section>
 		</MainContent>
 	</div>
