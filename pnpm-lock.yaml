@@ -20,6 +20,9 @@ importers:
       astro:
         specifier: ^5.7.5
         version: 5.7.5(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.40.0)(typescript@5.8.3)
+      more-rounding:
+        specifier: ^4.2.2
+        version: 4.2.2
       pg:
         specifier: ^8.15.6
         version: 8.15.6
@@ -1481,6 +1484,9 @@ packages:
   minipass@7.1.2:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  more-rounding@4.2.2:
+    resolution: {integrity: sha512-WOlsaHnvRobB4QmMuVqy+pQOFnUezdDLYsR5QsvCEFeiCcjA7WSwKoUy+vdmTM9d8AZye2DdYG0X/jZBLgjtUg==}
 
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
@@ -3880,6 +3886,8 @@ snapshots:
       brace-expansion: 2.0.1
 
   minipass@7.1.2: {}
+
+  more-rounding@4.2.2: {}
 
   mrmime@2.0.1: {}
 

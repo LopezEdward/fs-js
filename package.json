@@ -13,6 +13,7 @@
     "@astrojs/preact": "^4.0.10",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
+    "more-rounding": "^4.2.2",
     "pg": "^8.15.6",
     "preact": "^10.26.5",
     "reflect-metadata": "^0.2.2",

@@ -16,6 +16,12 @@ export default defineConfig({
   session: {
     driver: "fs-lite"
   },
+  server: {
+    allowedHosts: true
+  },
+  security: {
+    checkOrigin: false
+  },
 
   output: "server",
 

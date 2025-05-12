@@ -1,0 +1,25 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import MainContent from "../../../components/MainContent.astro";
+import DropListContainer from "../../../components/DropListContainer.astro";
+import Aside from "../../../components/Aside.astro";
+import Section from "../../../components/Section.astro";
+import { Category } from "./../../../components/preact/view/Inventory";
+---
+<Layout title="App - Inventory">
+	<div class="flex items-center justify-center bg-amber-500">
+		<Header />
+	</div>
+    <div class="flex mt-2">
+		<Aside title="Acciones">
+			<DropListContainer label="Producto" href="/inventory/product"/>
+			<DropListContainer label="Category" href="/inventory/category" />
+		</Aside>
+		<MainContent>
+			<Section title="Lista de Categorias ">
+				<Category client:load/>
+			</Section>
+		</MainContent>
+	</div>
+</Layout>

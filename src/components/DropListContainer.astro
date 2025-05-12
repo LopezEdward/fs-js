@@ -6,10 +6,11 @@ interface Props {
 }
 
 const { label, href, open } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
-<div class="">
+<div class="w-full">
     {
-        (href) && <a href={href} class="px-2">{label}</a>
+        (href) && <a href={href} class=`font-semibold px-2 w-full block ${(href === pathname) ? "bg-sky-600" : "hover:bg-amber-400"}`>{label}</a>
     }
     {
         (!href) &&
