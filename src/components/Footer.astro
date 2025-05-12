@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import GithubLogo from "./../assets/picture/github-mark.svg";
 ---
 
 <footer class="bg-amber-700 h-2/12 max-h-3/12 w-full border-t-2">
     <div class="p-5">
         <a class="flex items-center" href="https://github.com/LopezEdward/fs-js">
-            <Image src="/src/assets/picture/github-mark.svg" alt="Cosas" width={50} height={50} />
+            <Image src={GithubLogo} format="svg" alt="Cosas" width={50} height={50} />
             <span class="ml-2">Github del proyecto (Privado)</span>
         </a>
     </div>
