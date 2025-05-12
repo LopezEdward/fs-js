@@ -17,6 +17,7 @@ export default defineConfig({
     driver: "fs-lite"
   },
   server: {
+    host: "0.0.0.0",
     allowedHosts: true
   },
   security: {
