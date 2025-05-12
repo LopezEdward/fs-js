@@ -1,6 +1,7 @@
-import type { ProductDTO, CategoryDTO, ProductDTOPage, StatusResponse, CategoryDTOPage, BoucherDTO } from "./types";
+import type { ProductDTO, CategoryDTO, ProductDTOPage, StatusResponse, CategoryDTOPage, BoucherDTO } from "./types";    
 
-const apiRoute = import.meta.env.VITE_API_URL;
+
+const apiRoute = import.meta.env.VITE_API_URL || "https://fs-api.railway.internal/api/v1";
 const apiInventoryRoute = "/inventory";
 export const MIN_ITEMS_PER_REQUEST = 25;
 export const MAX_ITEMS_PER_REQUEST = 100;
@@ -8,7 +9,7 @@ export const MAX_ITEMS_PER_REQUEST = 100;
 export const productCall = Object.seal({
     prefix: "/product",
     all: async function () {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/all`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/all`;
         const res = await fetch(cl, { method: "GET"});
 
         if (!res.ok) {
@@ -23,7 +24,7 @@ export const productCall = Object.seal({
         if (elements < MIN_ITEMS_PER_REQUEST) elements = MIN_ITEMS_PER_REQUEST;
         if (elements > MAX_ITEMS_PER_REQUEST) elements = MAX_ITEMS_PER_REQUEST;
 
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/page/${nPage}?limit=${elements}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/page/${nPage}?limit=${elements}`;
         const res = await fetch(cl, { method: "GET" });
 
         if (!res.ok) {
@@ -33,7 +34,7 @@ export const productCall = Object.seal({
         return await res.json() as ProductDTOPage;
     },
     add: async function (body: ProductDTO) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/add`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/add`;
 
         console.log(body);
 
@@ -52,7 +53,7 @@ export const productCall = Object.seal({
         return await res.json() as ProductDTO;
     },
     delete: async function (id: number) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/delete/${id}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/delete/${id}`;
         const res = await fetch(cl, {
             method: "DELETE"
         });
@@ -64,7 +65,7 @@ export const productCall = Object.seal({
         return await res.json() as StatusResponse;
     },
     update: async function (body: ProductDTO) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/update`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/update`;
         const res = await fetch(cl, {
             method: "PUT",
             body: JSON.stringify(body),
@@ -80,7 +81,7 @@ export const productCall = Object.seal({
         return await res.json() as ProductDTO;
     },
     getSingle: async function (id: number) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/${id}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/${id}`;
         const res = await fetch(cl, {
             method: "GET"
         });
@@ -96,7 +97,7 @@ export const productCall = Object.seal({
 export const categoryCall = Object.seal({
     prefix: "/category",
     all: async function () {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/all`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/all`;
         const res = await fetch(cl, { method: "GET"});
 
         if (!res.ok) {
@@ -111,7 +112,7 @@ export const categoryCall = Object.seal({
         if (elements < MIN_ITEMS_PER_REQUEST) elements = MIN_ITEMS_PER_REQUEST;
         if (elements > MAX_ITEMS_PER_REQUEST) elements = MAX_ITEMS_PER_REQUEST;
 
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/page/${nPage}?limit=${elements}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/page/${nPage}?limit=${elements}`;
         const res = await fetch(cl, { method: "GET" });
 
         if (!res.ok) {
@@ -121,7 +122,7 @@ export const categoryCall = Object.seal({
         return await res.json() as CategoryDTOPage;
     },
     add: async function (body: CategoryDTO) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/add`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/add`;
         const res = await fetch(cl, {
             method: "POST",
             body: JSON.stringify(body),
@@ -137,7 +138,7 @@ export const categoryCall = Object.seal({
         return await res.json() as CategoryDTO;
     },
     delete: async function (id: number) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/delete/${id}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/delete/${id}`;
         const res = await fetch(cl, {
             method: "DELETE"
         });
@@ -149,7 +150,7 @@ export const categoryCall = Object.seal({
         return await res.json() as StatusResponse;
     },
     update: async function (body: CategoryDTO) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/update`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/update`;
         const res = await fetch(cl, {
             method: "PUT",
             body: JSON.stringify(body),
@@ -165,7 +166,7 @@ export const categoryCall = Object.seal({
         return await res.json() as CategoryDTO;
     },
     getSingle: async function (id: number) {
-        const cl = `${apiRoute}${apiInventoryRoute}${this.prefix}/${id}`;
+        const cl = `https://${apiRoute}${apiInventoryRoute}${this.prefix}/${id}`;
         const res = await fetch(cl, {
             method: "GET"
         });
@@ -181,7 +182,7 @@ export const categoryCall = Object.seal({
 export const sellCall = Object.seal({
     prefix: "/sell",
     add: async function (dto: BoucherDTO) {
-        const cl = `${apiRoute}${this.prefix}/add`;
+        const cl = `https://${apiRoute}${this.prefix}/add`;
 
         const res = await fetch(cl, {
             method: "POST",
