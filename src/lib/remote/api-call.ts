@@ -1,7 +1,7 @@
 import type { ProductDTO, CategoryDTO, ProductDTOPage, StatusResponse, CategoryDTOPage, BoucherDTO } from "./types";    
 
 
-const apiRoute = import.meta.env.VITE_API_URL || "https://fs-api.railway.internal/api/v1";
+const apiRoute = import.meta.env.VITE_API_URL || "https://fs-api-production.up.railway.app/api/v1";
 const apiInventoryRoute = "/inventory";
 export const MIN_ITEMS_PER_REQUEST = 25;
 export const MAX_ITEMS_PER_REQUEST = 100;
